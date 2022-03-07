@@ -5,16 +5,20 @@
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image.prod.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image-aframe.prod.js"></script>
+    
+    <!para gifs>
+    <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
   </head>
   <body>
     <a-scene mindar-image="imageTargetSrc: ./targets(3).mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-assets>
-     <img id="card" src=" ./cat-reading.gif" />
+     <!img id="card" src=" ./cat-reading.gif" />
       <!a-asset-item id="avatarModel" src=" ./imagen_buena.gltf"><!/a-asset-item>
       </a-assets>
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-      <a-entity mindar-image-target="targetIndex: 0">
-       <a-plane src="#card" position="0 0 0" height="1.5" width="1.5" rotation="0 0 0"><!/a-plane>
+      <a-entity mindar-image-target="targetIndex: 0"
+                geometry="primitive:box;" material="shader:gif;src:url(https://github.com/adacp/placa8M/blob/main/cat-reading.gif)">
+       <!a-plane src="#card" position="0 0 0" height="1.5" width="1.5" rotation="0 0 0"><!/a-plane>
         <!a-gltf-model rotation="90 0 90 " position="0 0 0" scale="0.07 0.07 0.07" src="#avatarModel">
       </a-entity>
     </a-scene>
